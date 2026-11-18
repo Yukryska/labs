@@ -1,0 +1,151 @@
+/* Шрифти для українського тексту та латиниці */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-cyrillic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/roboto-condensed-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/roboto-condensed-cyrillic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Блочна модель і сітка */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html { font-size: 62.5%; }
+
+body {
+  margin: 0;
+  color: #333;
+  font: 400 1.6rem/1.42857 "Roboto", Arial, sans-serif;
+}
+
+header#featured_container {
+  background-color: #c2c2c2;
+}
+
+#featured_container::before {
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(to right, #979797, #c2c2c2, #979797);
+}
+
+.container {
+  display: flow-root;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.block-views-blockfront-page-news-block-2 { margin-top: 3rem; }
+
+.row {
+  display: flow-root;
+  margin: 0 -15px;
+}
+
+.views-col {
+  float: left;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.views-col > div {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+#featured_container a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 1s ease-out;
+}
+
+/* Нижній градієнт і підпис поверх фотографії */
+.shadow_featured {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 75%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.85));
+  transition: opacity 2s ease-out;
+}
+
+#featured_container h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 30px;
+  border-bottom: 2px solid #fff;
+  font: 400 2rem/1.1 "Roboto Condensed", Arial, sans-serif;
+}
+
+#featured_container h2 span {
+  background-color: #252775;
+  transition: background-color 2s ease-out;
+}
+
+#featured_container a:is(:hover, :active) img { opacity: 1; }
+#featured_container a:is(:hover, :active) .shadow_featured { opacity: 0.1; }
+
+#featured_container a:is(:hover, :active) h2 span {
+  background-color: #00a1e4;
+}
+
+#featured_container a:focus-visible {
+  outline: 2px solid #252775;
+  outline-offset: 2px;
+}
+
+/* Контрольні ширини сітки та заголовків оригіналу */
+@media (min-width: 480px) {
+  #featured_container h2 { font-size: 3rem; }
+}
+
+@media (min-width: 768px) {
+  .container { width: 750px; }
+  .col-sm-6 { width: 50%; }
+  #featured_container h2 { font-size: 2rem; }
+}
+
+@media (min-width: 992px) {
+  .container { width: 970px; }
+  #featured_container h2 { font-size: 2.4rem; }
+}
+
+@media (min-width: 1200px) {
+  .container { width: 1170px; }
+  #featured_container h2 { font-size: 3rem; }
+}
